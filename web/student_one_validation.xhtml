@@ -16,13 +16,16 @@
 
 <h:body>
     <h:form>
-        First name: <h:inputText id="first_name" value="#{studentOne.firstName}" label="First name" required="true"/>
+        First name: <h:inputText id="first_name" value="#{studentOne.firstName}" label="First name" required="true"
+        requiredMessage="First name is mandatory"/>
         <h:message for="first_name" styleClass="error"/>
         <br/>
-        Last name: <h:inputText id="last_name" value="#{studentOne.lastName}" label="Last name" required="true"/>
+        Last name: <h:inputText id="last_name" value="#{studentOne.lastName}" label="Last name" required="true"
+        requiredMessage="Last name is mandatory"/>
         <h:message for="last_name" styleClass="error"/>
         <br/>
-        Email: <h:inputText id="email" value="#{studentOne.email}" label="Email" required="true"/>
+        Email: <h:inputText id="email" value="#{studentOne.email}" label="Email" required="true"
+        requiredMessage="Email is mandatory"/>
         <h:message for="email" styleClass="error"/>
         <br/>
         <h:commandButton value="Submit" action="student_one_response"/>
