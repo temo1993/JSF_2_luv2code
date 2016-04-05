@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Student Two Registration Form</title>
+    <style type="text/css">
+        .error {color: red}
+        .error1 {color: rebeccapurple}
+        .error2 {color: brown}
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        First name: <h:inputText id="first_name" value="#{studentTwo.firstName}" label="First name" required="true"
+        requiredMessage=" First name is mandatory"/>
+        <h:message for="first_name" styleClass="error"/>
+        <br/>
+
+        Last name: <h:inputText id="last_name" value="#{studentTwo.lastName}" label="Last name" required="true"
+        requiredMessage=" Last name is mandatory"/>
+        <h:message for="last_name" styleClass="error"/>
+        <br/>
+
+        Email: <h:inputText id="email" value="#{studentTwo.email}" label="Email" required="true"
+        requiredMessage=" Email is mandatory"/>
+        <h:message for="email" styleClass="error"/>
+        <br/>
+
+
+        Free passes: <h:inputText id="freePasses" value="#{studentTwo.freePasses}" label="Free Passes" required="true"
+                            requiredMessage=" You must feel this field!"
+                                  validatorMessage=" Enter Correct-zero(0) to ten(10) number!">
+        <f:validateLongRange minimum="0" maximum="10"/>
+                    </h:inputText>
+        <h:message for="freePasses" styleClass="error1"/>
+        <br/>
+        <br/>
+
+
+        Postal code: <h:inputText id="postalCode" value="#{studentTwo.postalCode}" label="Postal Code" required="true"
+                            requiredMessage=" Postal code is a required field!"
+                                  validatorMessage=" Enter Correct-Five(5) digit number!">
+        <f:validateLength minimum="5" maximum="5"/>
+                     </h:inputText>
+        <h:message for="postalCode" styleClass="error2"/>
+        <br/>
+        <h:commandButton value="Submit" action="student_two_response"/>
+    </h:form>
+</h:body>
+</html>
