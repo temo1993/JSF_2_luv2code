@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Student Four Registration Form</title>
+    <style type="text/css">
+        .error {color: red}
+        .error2 {color: darkorchid}
+        .error_course {color: limegreen}
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        First name: <h:inputText id="first_name" value="#{studentFour.firstName}" label="First name" required="true"
+                                 requiredMessage=" Must to fill!"/>
+        <h:message for="first_name" styleClass="error"/>
+        <br/>
+        Last name: <h:inputText id="last_name" value="#{studentFour.lastName}" label="Last name" required="true"
+                                requiredMessage=" Must to fill!"/>
+        <h:message for="last_name" styleClass="error2"/>
+        <br/>
+        Course code: <h:inputText id="course_code" value="#{studentFour.courseCode}"
+                                  label="Course code" required="true" validator="#{studentFour.ValidateTheCourseCode}"
+                                requiredMessage=" Must to fill!"/>
+        <h:message for="course_code" styleClass="error_course"/>
+        <br/>
+        <h:commandButton value="Submit" action="student_four_response"/>
+    </h:form>
+</h:body>
+</html>
